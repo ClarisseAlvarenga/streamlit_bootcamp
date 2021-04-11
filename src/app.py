@@ -42,6 +42,13 @@ def main():
     opcao_2 = st.sidebar.selectbox('Selecione o Estado', estado)
     figura = grafico_comparativo(obitos_2019, obitos_2020, opcao_1, opcao_2)
     st.pyplot(figura)
+
+    if st.checkbox('Mostre os Dados que originaram o gráfico'):
+        st. subheader('Estes foram os dados usados na análise')
+        st.markdown('2019')
+        st.dataframe(obitos_2019)
+        st.markdown('2020')
+        st.dataframe(obitos_2020)
     
 
 
